@@ -2,8 +2,17 @@
   <!-- Your html here -->
   <h1>Links</h1>
   <p>List of shortened URLS</p>
+
   <ul>
-    <li ng-repeat="link in links">{{ link }}</li>
+    <li ng-repeat="link in data">
+      <img src='../../assets/redirect_icon.png'/>
+      <div class='info'>
+        <div class='visits'><span class='count'>{{link.visits}}</span> Visits</div>
+        <div class='title'>{{link.title}}</div>
+        <div class='original'>{{link.url}}</div>
+        <a href='{{base_url}}/{{code}}'>{{link.base_url}}/{{link.code}}</a>
+      </div>
+    </li>
   </ul>
   <a href="#/shorten">Create a shortened link!</a>
 </div>
