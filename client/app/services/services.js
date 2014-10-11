@@ -4,7 +4,7 @@ angular.module('shortly.services', [])
   var getLinks = function() {
     return $http({
       method: 'GET',
-      url: '/api/links',
+      url: '/api/links'
     })
     .then(function (resp) {
       return resp.data;
@@ -14,10 +14,25 @@ angular.module('shortly.services', [])
     });
   };
 
+  var addLink = function(link) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    })
+    .then(function (resp) {
+      return resp.data;
+    })
+    .catch(function(error) {
+      console.error(error);
+    });
+  }
   return {
-    getLinks: getLinks
+    getLinks: getLinks,
+    addLink: addLink
   };
 })
+
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user
