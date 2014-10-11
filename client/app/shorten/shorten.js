@@ -13,4 +13,6 @@ angular.module('shortly.shorten', [])
         console.error(error);
       });
   };
+
 });
+

@@ -1,7 +1,7 @@
 <div id='container'>
 <!-- Your code here -->
-  <form name="shortenForm" ng-submit='addLink()'>
-    <input type='text' ng-model='link.url'>
+  <form name="shortenForm" ng-submit='addLink(shortenForm.$valid)'>
+    <input type='url' name='linkbox' ng-model='link.url' ng-required="true">
     <button>Submit</button>
   </form>
   <a href="#/links">Go back to shortened links</a>
