@@ -14,7 +14,7 @@ angular.module('shortly', [
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
-    })
+    }) //below here, we need to authenticate users
     .when('/links', {
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
