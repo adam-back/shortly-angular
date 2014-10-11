@@ -2,9 +2,9 @@
   <!-- Your html here -->
   <h1>Links</h1>
   <p>List of shortened URLS</p>
-
+  <input type='text' ng-model='link' name='searchBox' placeholder="Filter websites..."></input>
   <ul>
-    <li ng-repeat="link in data.links">
+    <li ng-repeat="link in data.links | filter:link| orderBy:'-visits'">
       <img src='../../assets/redirect_icon.png'/>
       <div class='info'>
         <div class='visits'><span class='count'>{{link.visits}}</span> Visits</div>
