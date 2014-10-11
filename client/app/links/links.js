@@ -1,12 +1,10 @@
 angular.module('shortly.links', [])
 
 .controller('LinksController', function ($scope, Links) {
-  // Your code here
 
   $scope.data = {};
 
   $scope.getLinks = function() {
-    console.log(Links);
     //make a http request
     Links.getLinks()
       .then(function(resp) {
